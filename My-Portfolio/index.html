@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mokshith</title>
+  <!-- Favicon for all browsers and devices -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#6B7A89">
+
+  <link rel="icon" type="image/png" href="myLogo.png">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fixa/fi@1.1.0/css/fi.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" class="theme-toggle">🌙</button>
+  
+  <!-- Particle Background -->
+  <div id="particles-js" class="particles-bg"></div>
+
+  <!-- Navigation -->
+  <header id="nav" class="nav">
+    <div class="container">
+      <!-- Enhanced Profile Container -->
+      <div class="profile-container">
+        <div class="profile-hover-wrapper">
+          <img src="profile.PNG" alt="Mokshith Profile" class="profile-pic">
+        </div>
+        <div class="logo">Mokshith C V</div>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <h1>Hi, I'm <span class="gradient">Mokshith</span></h1>
+      <div id="typed" class="typed-text"></div>
+      <a href="#contact" class="btn">Reach Out</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8;">
+        Hello, I am Mokshith, a passionate and dedicated software developer.
+        I hold a Master's degree in Computer Applications (MCA) from VTU with an 8.5 CGPA.
+        My expertise lies in Java, Python, Data Structures and Algorithms, and Full Stack Web Development.
+        I am committed to building scalable, efficient solutions and continuously enhancing my technical skills.
+        Currently, I am focused on developing real-world projects and deepening my knowledge in advanced technologies.
+        I am driven by a strong work ethic, a growth mindset, and a desire to contribute meaningfully to innovative teams.
+      </p>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section alt">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="cards">
+        <div class="card tilt">
+          <h3>Master of Computer Applications</h3>
+          <span>VTU | Oct 2022 – Oct 2024 | CGPA 8.5</span>
+          <p>Advanced studies in Networks, Operating Systems, Data Structures & Algorithms, Cryptography, Database Management Systems, and Object-Oriented Programming</p>
+        </div>
+        <div class="card tilt">
+          <h3>BSc Computer Science</h3>
+          <span>Oct 2019 – Oct 2022</span>
+          <p>Comprehensive foundation in core programming concepts, software engineering principles, and computer science fundamentals</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2>Experience</h2>
+      <div class="cards">
+        <a href="https://drive.google.com/file/d/1vom65I-D7i8ixS710U-vXV4hMVsnpUVC/view?usp=drive_link" target="_blank" class="card-link">
+          <div class="card tilt">
+            <h3>Dotch Endeavours Pvt. Ltd (Internship) <i class="fi fi-ss-external-link"></i></h3>
+            <span>Oct 2023 – Dec 2023</span>
+            <p>Developed ML model for Gold Price Prediction using Python & Scikit-learn. Implemented data preprocessing pipelines and performance evaluation metrics.</p>
+          </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1mSJhzBxArP7pk-NxsFAowSv_sloUwJ4c/view?usp=drive_link" target="_blank" class="card-link">
+          <div class="card tilt">
+            <h3>Java Full-Stack Course <i class="fi fi-ss-external-link"></i></h3>
+            <span>Tap Academy | 6 Months Intensive</span>
+            <p>Mastered Core Java, Spring Boot, React, Data Structures & Algorithms, MySQL, and modern web technologies (HTML5, CSS3, JavaScript ES6+)</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section alt">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="cards projects-grid">
+        <a href="https://github.com/Mokshith-Nayak/Mobile-Tracking.git" target="_blank" class="card-link">
+          <div class="card tilt">
+            <h3>Mobile Tracking Application (Android Application | Java)<i class="fi fi-ss-external-link"></i></h3>
+            <p>Android geolocation tracking system with Google Maps API integration and SQLite database for persistent data storage</p>
+          </div>
+        </a>
+        <a href="https://github.com/Mokshith-Nayak/Gold-Price-Prediction-Using-Python.git" target="_blank" class="card-link">
+          <div class="card tilt">
+            <h3>Gold Price Prediction (Python) <i class="fi fi-ss-external-link"></i></h3>
+            <p>Interactive web application for predicting gold prices using machine learning algorithms</p>
+          </div>
+        </a>
+        <a href="https://github.com/Mokshith-Nayak/Train-TicketBooking-JAVA-Project.git" target="_blank" class="card-link">
+          <div class="card tilt">
+            <h3>IRCTC Booking System (Java) <i class="fi fi-ss-external-link"></i></h3>
+            <p>Java-based railway reservation system using Gradle build tool with JSON database for ticket management</p>
+          </div>
+        </a>
+        <a href="https://github.com/Mokshith-Nayak/My-Programming.git" target="_blank" class="card-link">
+          <div class="card tilt">
+            <h3>Programming Journey <i class="fi fi-ss-external-link"></i></h3>
+            <p>Collection of my programming projects and learning journey across various technologies</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="grid skills">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>JavaScript</span>
+        <span>HTML5/CSS3</span>
+        <span>MySQL</span>
+        <span>DSA</span>
+        <span>Node.js</span>
+        <span>React</span>
+        <span>Git</span>
+        <span>UI/UX Design</span>
+        <span>Python</span>
+        <span>Hibernate</span>
+        <span>REST APIs</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section alt">
+    <div class="container">
+      <h2>Let's Connect</h2>
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> +91 6361761424</p>
+        <p><i class="fas fa-envelope"></i> mokshith.cv99@gmail.com</p>
+        <p>
+          <a href="https://linkedin.com/in/mokshith-c-v-nayak1999" target="_blank"><i class="fas fa-linkedin"></i> LinkedIn</a> | 
+          <a href="https://github.com/Mokshith-Nayak" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Mokshith Nayak | Full Stack Developer Enthusiast</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
