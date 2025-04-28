@@ -1,0 +1,559 @@
+:root {
+  --primary: #6B7A89;
+  --secondary: #CDBCA8;
+  --accent: #675C5A;
+  --dark: #201E1F;
+  --light: #FBEAE7;
+  --text-dark: #201E1F;
+  --text-light: #FBEAE7;
+  --glass: rgba(203, 188, 168, 0.18);
+  --glass-border: rgba(107, 122, 137, 0.18);
+  --font: 'Poppins', sans-serif;
+  --nav-height: 80px;
+}
+
+.light {
+  --bg: var(--light);
+  --text: var(--text-dark);
+  --nav-bg: linear-gradient(90deg, #4a5663 0%, #a49888 100%);
+  --nav-text: var(--text-light);
+  --card-bg: var(--light);
+  --card-text: var(--text-dark);
+}
+
+.dark {
+  --bg: var(--dark);
+  --text: var(--text-light);
+  --nav-bg: linear-gradient(90deg, #121212 0%, #403934 100%);
+  --nav-text: var(--text-light);
+  --card-bg: var(--dark);
+  --card-text: var(--text-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+.nav.scrolled {
+  padding: 1rem 0;
+  backdrop-filter: blur(16px);
+}
+
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0px solid var(--secondary);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4776E6 0%, #482680 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(107, 122, 137, 0.3);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  padding-top: var(--nav-height);
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.gradient {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.typed-text {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  min-height: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(90deg, #6B7A89, #CDBCA8);
+  color: #201E1F;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(107, 122, 137, 0.2);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(107, 122, 137, 0.3);
+}
+
+/* Sections */
+.section {
+  padding: 8rem 0;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+.section.alt {
+  background: linear-gradient(135deg, rgba(107, 122, 137, 0.08), rgba(203, 188, 168, 0.08));
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.card {
+  background: var(--card-bg);
+  color: var(--card-text);
+  padding: 2.5rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 32px rgba(32, 30, 31, 0.08);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(32, 30, 31, 0.15);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.card span {
+  display: block;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* Skills Grid */
+.grid.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.grid.skills span {
+  background: #6B7A89;
+  padding: 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #FBEAE7;
+  transition: transform 0.3s ease;
+}
+
+.grid.skills span:nth-child(even) {
+  background: #CDBCA8;
+  color: #201E1F;
+}
+
+.grid.skills span:nth-child(3n) {
+  background: #675C5A;
+  color: #FBEAE7;
+}
+
+.grid.skills span:hover {
+  transform: translateY(-5px);
+}
+
+/* Contact */
+.contact-info {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+.contact-info a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  padding: 3rem 0;
+  text-align: center;
+  color: var(--text);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--glass-border);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Particles */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: var(--bg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .typed-text {
+    font-size: 1.5rem;
+  }
+  
+  .section {
+    padding: 5rem 0;
+  }
+  
+  .profile-pic {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section h2 {
+    font-size: 2.2rem;
+  }
+  
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* Update these variables in :root */
+:root {
+  --dark: #000000; /* Pure black */
+  --light: #FFFFFF; /* Pure white */
+}
+
+/* Update these selectors */
+.dark {
+  --bg: #000000; /* Pure black */
+  --text: #FFFFFF; /* Pure white */
+  --nav-bg: #000000; /* Pure black */
+  --nav-text: #FFFFFF; /* Pure white */
+  --card-bg: #121212; /* Slightly lighter than pure black for cards */
+}
+
+.light {
+  --bg: #FFFFFF; /* Pure white */
+  --text: #000000; /* Pure black */
+  --nav-bg: #FFFFFF; /* Pure white */
+  --nav-text: #000000; /* Pure black */
+  --card-bg: #F5F5F5; /* Slightly off-white for cards */
+}
+
+/* Fix for nav bar glitch */
+.nav {
+  background: var(--nav-bg) !important; /* Force override any other backgrounds */
+  transition: background 0.6s ease !important; /* Smooth transition */
+}
+
+/* Ensure particles background matches */
+.dark #particles-js {
+  background: #000000 !important;
+}
+
+.light #particles-js {
+  background: #FFFFFF !important;
+}
+
+
+
+/* Particle container with glass effect */
+.particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: transparent !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Glass shine overlay */
+.particles-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.1) 0%,
+    rgba(255,255,255,0) 50%,
+    rgba(255,255,255,0.1) 100%
+  );
+  pointer-events: none;
+}
+
+
+
+
+
+/* Enhanced Bubble Animation */
+.bubble-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.bubble-cluster {
+  position: absolute;
+  bottom: -20%;
+  animation: cluster-float 25s ease-in infinite;
+  opacity: 0;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 0 15px rgba(255, 255, 255, 0.3),
+    inset 0 0 30px rgba(255, 255, 255, 0.15),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
+  filter: hue-rotate(var(--hue));
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  filter: blur(1px);
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 65%;
+  width: 15%;
+  height: 15%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  filter: blur(0.5px);
+}
+
+@keyframes cluster-float {
+  0% {
+    transform: translateX(var(--start-x)) translateY(100vh) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(var(--start-x)) translateY(80vh) scale(0.9);
+    opacity: 0.9;
+  }
+  90% {
+    transform: translateX(calc(var(--start-x) + var(--drift-x))) translateY(var(--float-y)) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(calc(var(--start-x) + var(--drift-x))) translateY(-20vh) scale(0.8);
+    opacity: 0;
+  }
+}
